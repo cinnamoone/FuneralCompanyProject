@@ -33,10 +33,16 @@ public class QuickStart {
 //                () -> new additionalServices().setVisible(true)
 //        );
 
-       //Lista samochodów:
-        SwingUtilities.invokeLater(
-                () -> new carList().setVisible(true)
-        );
+//       Lista samochodów:
+//        SwingUtilities.invokeLater(
+//                () -> new carList().setVisible(true)
+//        );
+
+
+        //Lista zmarłych:
+//        SwingUtilities.invokeLater(
+//                () -> new deceasedList().setVisible(true)
+//        );
 
 
 
