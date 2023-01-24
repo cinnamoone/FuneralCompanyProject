@@ -1,9 +1,18 @@
 package src;
 
-import javax.swing.*;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 
-public class additionalServices {
-    private JPanel panel1;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class additionalServices extends JFrame {
+    private JPanel panelA;
     private JTextField addPrice;
     private JTextField addServiceName;
     private JTextField addserviceID;
@@ -17,4 +26,7 @@ public class additionalServices {
     private JComboBox comboBox4;
     private JComboBox comboBox5;
     private JComboBox comboBox6;
+    private JTextField textField1;
+
+
 }

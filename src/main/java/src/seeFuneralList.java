@@ -1,5 +1,8 @@
 package src;
 
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
@@ -15,8 +18,13 @@ public class seeFuneralList extends JFrame{
     private JTextArea Area;
     private JScrollPane ScrollPane;
 
+    String uri = "mongodb+srv://LessName:Kingusia319@cluster.epf7xb0.mongodb.net/?retryWrites=true&w=majority";
+    MongoClient mongoClient = MongoClients.create(uri);
+    MongoDatabase database = mongoClient.getDatabase("FuneralCompany");
+    MongoCollection additio = database.getCollection("additionalServices");
 
-    public seeFuneralList(MongoDatabase database) {
+
+    public seeFuneralList() {
         this.setTitle("Lista pogrzebów");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(MainPanel);
