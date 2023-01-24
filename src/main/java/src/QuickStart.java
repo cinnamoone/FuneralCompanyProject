@@ -44,7 +44,10 @@ public class QuickStart {
 //                () -> new deceasedList().setVisible(true)
 //        );
 
-
+        //Lista pracowników:
+//        SwingUtilities.invokeLater(
+//                () -> new employeeList().setVisible(true)
+//        );
 
 
 
