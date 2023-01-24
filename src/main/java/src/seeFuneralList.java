@@ -31,20 +31,14 @@ public class seeFuneralList extends JFrame{
         List<String> newFunerals = new ArrayList<>();
         for(int funeral = 0; funeral < funerals.size(); funeral++) {
             String funeralID = funerals.get(funeral).getString("funeralID");
-            Date funeralDate = funerals.get(funeral).getDate("funeralDate");
+            String funeralDate = funerals.get(funeral).getString("funeralDate");
             Document deceasedInfo = funerals.get(funeral).get("deceasedInfo", Document.class);
             String nameAndSurname = deceasedInfo.getString("nameAndSurname");
-            Date deathDate = deceasedInfo.getDate("deathDate");
+            String deathDate = deceasedInfo.getString("deathDate");
             Document graveyard = funerals.get(funeral).get("graveyard", Document.class);
-            Boolean communal = graveyard.getBoolean("communal");
+            String communal = graveyard.getString("communal");
             String town = graveyard.getString("town");
             String graveyardName = graveyard.getString("graveyardName");
-            String odp;
-            if(communal==true){
-                odp = "TAK";
-            }else{
-                odp = "NIE";
-            }
 
             newFunerals.add("\n" + (funeral + 1) +
                     "\nID pogrzebu: " + funeralID +
@@ -53,7 +47,7 @@ public class seeFuneralList extends JFrame{
                     "\nData śmierci: " + deathDate +
                     "\nMiejsce pogrzebu: " + town +
                     "\nNazwa cmentarza: " + graveyardName +
-                    "\nCzy komunalny: " + odp + "\n");
+                    "\nCzy komunalny: " + communal + "\n");
 
             Area.append(newFunerals.get(funeral));
 
