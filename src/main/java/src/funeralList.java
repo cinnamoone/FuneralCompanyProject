@@ -1,8 +1,9 @@
-package GUI;
+package src;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class funeralList {
+public class funeralList extends JFrame {
     private JPanel panel1;
     private JTextField funeralID;
     private JTextField funeralDate2;
@@ -20,4 +21,11 @@ public class funeralList {
     private JLabel communal;
     private JLabel town;
     private JLabel graveyardName;
+
+    public funeralList() throws HeadlessException {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setContentPane(panel1);
+        this.pack();
+        this.setLocationRelativeTo(null);
+    }
 }
