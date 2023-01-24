@@ -55,6 +55,11 @@ public class QuickStart {
 //        );
 
 
+        // Wyswietlanie transportu
+//        SwingUtilities.invokeLater(
+//                () -> new transportList().setVisible(true)
+//        );
+
 
 
     }
