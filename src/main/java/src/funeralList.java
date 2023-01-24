@@ -40,8 +40,6 @@ public class funeralList extends JFrame {
 
 
 
-
-
     public funeralList() throws HeadlessException {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(panel1);

@@ -10,18 +10,25 @@ import javax.swing.*;
 public class QuickStart {
     public static void main(String[] args) {
 
-            String uri = "mongodb+srv://LessName:Kingusia319@cluster.epf7xb0.mongodb.net/?retryWrites=true&w=majority";
-            MongoClient mongoClient = MongoClients.create(uri);
-            MongoDatabase database = mongoClient.getDatabase("FuneralCompany");
+//            String uri = "mongodb+srv://LessName:Kingusia319@cluster.epf7xb0.mongodb.net/?retryWrites=true&w=majority";
+//            MongoClient mongoClient = MongoClients.create(uri);
+//            MongoDatabase database = mongoClient.getDatabase("FuneralCompany");
+//
+//
+//      Zobacz listę pogrzebów:
+//        SwingUtilities.invokeLater(
+//                () -> new seeFuneralList(database).setVisible(true)
+//        );
 
 
-
-        SwingUtilities.invokeLater(
-                () -> new seeFuneralList(database).setVisible(true)
-        );
-
+//      Dodaj pogrzeb:
 //        SwingUtilities.invokeLater(
 //                () -> new funeralList().setVisible(true)
+//        );
+
+//      Dodaj zmarłego:
+//        SwingUtilities.invokeLater(
+//                () -> new addDeceased().setVisible(true)
 //        );
 
 

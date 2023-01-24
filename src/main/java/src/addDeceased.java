@@ -1,9 +1,17 @@
 package src;
 
-import javax.swing.*;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 
-public class addDeceased
-{
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class addDeceased extends JFrame {
     private JTextField nameDeceased;
     private JTextField surnameDeceased;
     private JTextField textField3;
@@ -16,4 +24,35 @@ public class addDeceased
     private JLabel peselDeceased;
     private JLabel deceasedID;
     private JLabel deceasedInfo;
+    private JPanel panelG;
+
+
+    String uri = "mongodb+srv://LessName:Kingusia319@cluster.epf7xb0.mongodb.net/?retryWrites=true&w=majority";
+    MongoClient mongoClient = MongoClients.create(uri);
+    MongoDatabase database = mongoClient.getDatabase("FuneralCompany");
+    MongoCollection deceased = database.getCollection("deceasedInfo");
+
+
+
+    public addDeceased() throws HeadlessException {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setContentPane(panelG);
+        this.pack();
+        this.setLocationRelativeTo(null);
+
+        addDeceased.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Document d =new Document("_id",textField6.getText());
+                d.append("name",nameDeceased.getText());
+                d.append("surname", surnameDeceased.getText());
+                d.append("deathDate", textField4.getText());
+                d.append("birthDate", textField3.getText());
+                d.append("pesel", textField5.getText());
+                deceased.insertOne(d);
+            }
+        });
+    }
+
 }
