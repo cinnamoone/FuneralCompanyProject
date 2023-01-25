@@ -9,13 +9,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
-import javax.swing.*;
 
 public class FuneralDetailsGUI extends JFrame {
     private JPanel panel1;
@@ -63,7 +61,7 @@ public class FuneralDetailsGUI extends JFrame {
     private JComboBox pracownicy2;
     private JComboBox pracownicy3;
     private JComboBox pracownicy4;
-    private JComboBox pracownic5;
+    private JComboBox pracownicy5;
     private JComboBox pracownicy6;
     private JComboBox organista;
 
@@ -83,49 +81,57 @@ public class FuneralDetailsGUI extends JFrame {
                 fd.append("deceasedID", dodajIDzmarlego.getText());
                 fd.append("nameAndSurname", dodajImieNazwisko.getText());
                 fd.append("pesel", dodajPesel.getText());
-                List<List> aservices = new ArrayList<>();
-                List<Object> services = new ArrayList<>();
+                List<Object> aservices = new ArrayList<>();
+
                 if(service1.getSelectedItem() != "-"){
-                    services.add(service1.getSelectedItem());
+                    aservices.add(service1.getSelectedItem());
                 }
                 if(service2.getSelectedItem() != "-"){
-                    services.add(service2.getSelectedItem());
+                    aservices.add(service2.getSelectedItem());
                 }
                 if(service3.getSelectedItem() != "-"){
-                    services.add(service3.getSelectedItem());
+                    aservices.add(service3.getSelectedItem());
                 }
                 if(service4.getSelectedItem() != "-"){
-                    services.add(service4.getSelectedItem());
+                    aservices.add(service4.getSelectedItem());
                 }
                 if(service5.getSelectedItem() != "-"){
-                    services.add(service5.getSelectedItem());
+                    aservices.add(service5.getSelectedItem());
                 }
                 if(service6.getSelectedItem() != "-"){
-                    services.add(service6.getSelectedItem());
+                    aservices.add(service6.getSelectedItem());
                 }
-                        List<Object> pallbearers = new ArrayList<>();
+
                         if(pracownicy1.getSelectedItem() != "-"){
-                            pallbearers.add(service1.getSelectedItem());
+                            aservices.add(pracownicy1.getSelectedItem());
                         }
                         if(pracownicy2.getSelectedItem() != "-"){
-                            pallbearers.add(service2.getSelectedItem());
+                            aservices.add(pracownicy2.getSelectedItem());
                         }
                         if(pracownicy3.getSelectedItem() != "-"){
-                            pallbearers.add(service3.getSelectedItem());
+                            aservices.add(pracownicy3.getSelectedItem());
                         }
                         if(pracownicy4.getSelectedItem() != "-"){
-                            pallbearers.add(service4.getSelectedItem());
+                            aservices.add(pracownicy4.getSelectedItem());
                         }
-                        if(pracownic5.getSelectedItem() != "-"){
-                            pallbearers.add(service5.getSelectedItem());
+                        if(pracownicy5.getSelectedItem() != "-"){
+                            aservices.add(pracownicy5.getSelectedItem());
                         }
                         if(pracownicy6.getSelectedItem() != "-"){
-                            pallbearers.add(service6.getSelectedItem());
+                            aservices.add(pracownicy6.getSelectedItem());
                         }
+
+
+                        if(organista.getSelectedItem() != "-"){
+                            aservices.add(organista.getSelectedItem());
+                        }
+
+
                 fd.append("aservices", aservices);
 
 
                 fd.append("transportID", IDtransportu.getText());
+                List<Object> PlaceOfBurial = new ArrayList<>();
                 fd.append("graveyardName", dodajNazweCmentarza.getText());
                 fd.append("town",dodajNazweMiasta.getText());
                 fd.append("alley", dodajAlejke.getText());
@@ -135,7 +141,7 @@ public class FuneralDetailsGUI extends JFrame {
                 fd.append("aservPrice", dodatkowaCena.getText());
                 fd.append("summPrice",cenaKoncowa.getText());
                 funeralDetails.insertOne(fd);
-                JOptionPane.showMessageDialog(null, "Dodano zmarłego.");
+                JOptionPane.showMessageDialog(null, "Dodano szczegóły pogrzebu do listy.");
             }
             });
         }
