@@ -15,6 +15,7 @@ public class Menu extends JFrame {
     private JButton zobaczListęTransportówButton;
     private JButton dodajDodatkowąUsługęButton;
     private JButton zobaczUsługiDodatkoweButton;
+    private JButton dodajTransportButton;
 
     public Menu() {
 
@@ -95,6 +96,15 @@ public class Menu extends JFrame {
                 SwingUtilities.invokeLater(
                         () -> new additionalServices().setVisible(true)
                 );
+            }
+        });
+        dodajTransportButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SwingUtilities.invokeLater(
+                        () -> new transportDetails().setVisible(true)
+                );
+
             }
         });
     }

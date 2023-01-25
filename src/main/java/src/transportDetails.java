@@ -34,6 +34,7 @@ public class transportDetails extends JFrame{
     private JComboBox comboBox3;
     private JComboBox comboBox4;
     private JComboBox comboBox5;
+    private JButton zobaczKarawanyButton;
     private JTextField textField4;
 
 
@@ -67,6 +68,14 @@ public class transportDetails extends JFrame{
 
 
                 transport.insertOne(d);
+            }
+        });
+        zobaczKarawanyButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SwingUtilities.invokeLater(
+                        () -> new carList().setVisible(true)
+                );
             }
         });
     }
