@@ -45,7 +45,6 @@ public class transportDetails extends JFrame{
 
 
     public transportDetails() throws HeadlessException {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(panelT);
         this.pack();
         this.setLocationRelativeTo(null);

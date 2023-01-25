@@ -21,12 +21,10 @@ public class seeFuneralList extends JFrame{
     String uri = "mongodb+srv://LessName:Kingusia319@cluster.epf7xb0.mongodb.net/?retryWrites=true&w=majority";
     MongoClient mongoClient = MongoClients.create(uri);
     MongoDatabase database = mongoClient.getDatabase("FuneralCompany");
-    MongoCollection additio = database.getCollection("additionalServices");
 
 
     public seeFuneralList() {
         this.setTitle("Lista pogrzebów");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(MainPanel);
         this.pack();
         this.setLocationRelativeTo(null);
@@ -38,7 +36,7 @@ public class seeFuneralList extends JFrame{
         List<Document> funerals = database.getCollection("funeralList").find().into(new ArrayList<>());
         List<String> newFunerals = new ArrayList<>();
         for(int funeral = 0; funeral < funerals.size(); funeral++) {
-            String funeralID = funerals.get(funeral).getString("funeralID");
+            String funeralID = funerals.get(funeral).getString("_id");
             String funeralDate = funerals.get(funeral).getString("funeralDate");
             Document deceasedInfo = funerals.get(funeral).get("deceasedInfo", Document.class);
             String nameAndSurname = deceasedInfo.getString("nameAndSurname");

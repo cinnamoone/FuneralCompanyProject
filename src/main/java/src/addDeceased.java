@@ -35,7 +35,6 @@ public class addDeceased extends JFrame {
 
 
     public addDeceased() throws HeadlessException {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(panelG);
         this.pack();
         this.setLocationRelativeTo(null);
@@ -53,6 +52,7 @@ public class addDeceased extends JFrame {
                 deceased.insertOne(d);
             }
         });
+
     }
 
 }

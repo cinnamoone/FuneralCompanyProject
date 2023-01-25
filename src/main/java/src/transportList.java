@@ -23,7 +23,6 @@ public class transportList extends JFrame {
 
     public transportList() {
         this.setTitle("Lista transportów");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(PanelTL);
         this.pack();
         this.setLocationRelativeTo(null);

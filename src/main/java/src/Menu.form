@@ -12,28 +12,12 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="1b3bf" class="javax.swing.JButton" binding="zobaczListęPogrzebówButton" default-binding="true">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Zobacz listę pogrzebów"/>
-        </properties>
-      </component>
       <component id="59d80" class="javax.swing.JButton" binding="dodajZmarłegoButton" default-binding="true">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Dodaj zmarłego"/>
-        </properties>
-      </component>
-      <component id="9db2a" class="javax.swing.JButton" binding="zobaczListęZmarłychButton" default-binding="true">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Zobacz listę zmarłych"/>
         </properties>
       </component>
       <component id="205a4" class="javax.swing.JLabel">
@@ -65,20 +49,44 @@
           <text value="Zobacz listę karawanów"/>
         </properties>
       </component>
+      <component id="93e32" class="javax.swing.JButton" binding="dodajPogrzebButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Dodaj pogrzeb"/>
+        </properties>
+      </component>
       <component id="ff0" class="javax.swing.JButton" binding="zobaczListęTransportówButton" default-binding="true">
         <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Zobacz listę transportów"/>
         </properties>
       </component>
-      <component id="93e32" class="javax.swing.JButton" binding="dodajPogrzebButton" default-binding="true">
+      <component id="9db2a" class="javax.swing.JButton" binding="zobaczListęZmarłychButton" default-binding="true">
         <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Dodaj pogrzeb"/>
+          <text value="Zobacz listę zmarłych"/>
+        </properties>
+      </component>
+      <component id="1b3bf" class="javax.swing.JButton" binding="zobaczListęPogrzebówButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Zobacz listę pogrzebów"/>
+        </properties>
+      </component>
+      <component id="e64a" class="javax.swing.JButton" binding="dodajDodatkowąUsługęButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Dodaj dodatkową usługę"/>
         </properties>
       </component>
     </children>

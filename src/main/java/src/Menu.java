@@ -13,11 +13,11 @@ public class Menu extends JFrame {
     private JButton dodajPogrzebButton;
     private JButton zobaczListęKarawanówButton;
     private JButton zobaczListęTransportówButton;
+    private JButton dodajDodatkowąUsługęButton;
 
     public Menu() {
 
         this.setTitle("Menu Główne");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(MainPanel);
         this.pack();
         this.setLocationRelativeTo(null);
@@ -77,6 +77,15 @@ public class Menu extends JFrame {
                 SwingUtilities.invokeLater(
                         () -> new funeralList().setVisible(true)
                 );
+            }
+        });
+        dodajDodatkowąUsługęButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SwingUtilities.invokeLater(
+                        () -> new additionalServices().setVisible(true)
+                );
+
             }
         });
     }

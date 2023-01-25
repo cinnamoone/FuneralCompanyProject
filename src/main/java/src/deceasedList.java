@@ -19,7 +19,6 @@ public class deceasedList extends JFrame{
 
     public deceasedList() {
         this.setTitle("Lista zmarłych");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(PanelDeceased);
         this.pack();
         this.setLocationRelativeTo(null);

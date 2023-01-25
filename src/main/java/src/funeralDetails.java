@@ -56,7 +56,6 @@ public class funeralDetails extends JFrame {
 
     public funeralDetails() throws HeadlessException {
         this.setTitle("Dodawanie pogrzebu");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(panel1);
         this.pack();
         this.setLocationRelativeTo(null);

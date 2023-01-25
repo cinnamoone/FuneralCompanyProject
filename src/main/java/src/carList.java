@@ -21,7 +21,6 @@ public class carList extends JFrame{
 
     public carList () {
         this.setTitle("Lista samochodów");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(PanelCar);
         this.pack();
         this.setLocationRelativeTo(null);

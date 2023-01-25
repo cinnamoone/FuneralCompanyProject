@@ -20,7 +20,6 @@ public class employeeList extends JFrame{
 
     public employeeList() {
         this.setTitle("Lista pracowników");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(PanelE);
         this.pack();
         this.setLocationRelativeTo(null);
