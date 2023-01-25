@@ -8,6 +8,7 @@ import org.bson.Document;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class seeAdditionalServices extends JFrame{
@@ -37,22 +38,11 @@ public class seeAdditionalServices extends JFrame{
             String price = services.get(service).getString("price");
             String name = services.get(service).getString("serviceName");
 
-//            Document deceasedInfo = services.get(service).get("deceasedInfo", Document.class);
-//            String nameAndSurname = deceasedInfo.getString("nameAndSurname");
-//            String deathDate = deceasedInfo.getString("deathDate");
-//
-//            List<Object> employees = new ArrayList<>();
-//
-//            if(comboBox1.getSelectedItem() != "-"){
-//                employees.add(comboBox1.getSelectedItem());
-//            }
-
 
             newServices.add("\n" + (service + 1) +
                     "\nID usługi: " + id_s +
                     "\nCena usługi: " + price +
-                    "\nNazwa usługi: " + name +
-                    "\n");
+                    "\nNazwa usługi: " + name +"\n");
 
             AreaS.append(newServices.get(service));
 

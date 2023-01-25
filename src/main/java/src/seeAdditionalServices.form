@@ -18,12 +18,9 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="ed21e" class="javax.swing.JTextArea" binding="AreaS">
+          <component id="633e9" class="javax.swing.JTextArea" binding="AreaS">
             <constraints/>
-            <properties>
-              <minimumSize width="400" height="400"/>
-              <preferredSize width="400" height="400"/>
-            </properties>
+            <properties/>
           </component>
         </children>
       </scrollpane>

@@ -14,6 +14,7 @@ public class Menu extends JFrame {
     private JButton zobaczListęKarawanówButton;
     private JButton zobaczListęTransportówButton;
     private JButton dodajDodatkowąUsługęButton;
+    private JButton zobaczUsługiDodatkoweButton;
 
     public Menu() {
 
@@ -79,13 +80,21 @@ public class Menu extends JFrame {
                 );
             }
         });
+        zobaczUsługiDodatkoweButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SwingUtilities.invokeLater(
+                        () -> new seeAdditionalServices().setVisible(true)
+                );
+
+            }
+        });
         dodajDodatkowąUsługęButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(
                         () -> new additionalServices().setVisible(true)
                 );
-
             }
         });
     }
