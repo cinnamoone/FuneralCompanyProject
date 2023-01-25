@@ -59,7 +59,6 @@ public class transportDetails extends JFrame{
                 pickUpLocation.append("town",textField1.getText());
                 pickUpLocation.append("funeralDate",textField1.getText());
                 pickUpLocation.append("streetName",textField2.getText());
-                pickUpLocation.append("streetNr",textField4.getText());
                 pickUpLocation.append("houseNr", textField3.getText());
                 pickUpLocation.append("postalCode",textField5.getText());
                 d.append("pickUpLocation", pickUpLocation);

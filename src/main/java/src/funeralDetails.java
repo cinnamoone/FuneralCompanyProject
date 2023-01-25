@@ -1,8 +1,9 @@
 package src;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class funeralDetails {
+public class funeralDetails extends JFrame {
     private JPanel panel1;
     private JTextField textField1;
     private JTextField textField2;
@@ -51,4 +52,13 @@ public class funeralDetails {
     private JComboBox comboBox5;
     private JComboBox comboBox6;
     private JComboBox comboBox7;
+
+
+    public funeralDetails() throws HeadlessException {
+        this.setTitle("Dodawanie pogrzebu");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setContentPane(panel1);
+        this.pack();
+        this.setLocationRelativeTo(null);
+    }
 }

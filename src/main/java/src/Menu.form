@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="src.Menu">
+  <grid id="27dc6" binding="MainPanel" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="1001" height="589"/>
+    </constraints>
+    <properties>
+      <alignmentX value="0.0"/>
+      <background color="-14663359"/>
+      <preferredSize width="1000" height="600"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="1b3bf" class="javax.swing.JButton" binding="zobaczListęPogrzebówButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Zobacz listę pogrzebów"/>
+        </properties>
+      </component>
+      <component id="59d80" class="javax.swing.JButton" binding="dodajZmarłegoButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Dodaj zmarłego"/>
+        </properties>
+      </component>
+      <component id="9db2a" class="javax.swing.JButton" binding="zobaczListęZmarłychButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Zobacz listę zmarłych"/>
+        </properties>
+      </component>
+      <component id="205a4" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-1776667"/>
+          <font name="High Tower Text" size="28" style="1"/>
+          <foreground color="-1776667"/>
+          <text value="Zakład pogrzebowy"/>
+        </properties>
+      </component>
+      <component id="a670f" class="javax.swing.JButton" binding="zobaczListęPracownikówButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Zobacz listę pracowników"/>
+        </properties>
+      </component>
+      <component id="e716c" class="javax.swing.JButton" binding="zobaczListęKarawanówButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Zobacz listę karawanów"/>
+        </properties>
+      </component>
+      <component id="ff0" class="javax.swing.JButton" binding="zobaczListęTransportówButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Zobacz listę transportów"/>
+        </properties>
+      </component>
+      <component id="93e32" class="javax.swing.JButton" binding="dodajPogrzebButton" default-binding="true">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Dodaj pogrzeb"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

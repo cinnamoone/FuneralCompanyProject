@@ -50,7 +50,6 @@ public class transportList extends JFrame {
             Document pickUpLocation = transports.get(transport).get("pickUpLocation", Document.class);
             String town = pickUpLocation.getString("town");
             String streetName = pickUpLocation.getString("streetName");
-            String streetNr = pickUpLocation.getString("streetNr");
             String houseNr = pickUpLocation.getString("houseNr");
             String postalCode = pickUpLocation.getString("postalCode");
             String car = transports.get(transport).getString("car");
@@ -76,7 +75,6 @@ public class transportList extends JFrame {
                     "\nID transportu: " + id +
                     "\nMiejscowość: " + town +
                     "\nUlica: " + streetName +
-                    "\nNumer ulicy: " + streetNr +
                     "\nNumer domu: " + houseNr +
                     "\nKod pocztowy: " + postalCode +
                     "\nImię kierowcy: " + imie +
