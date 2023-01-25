@@ -50,6 +50,8 @@ public class addDeceased extends JFrame {
                 d.append("birthDate", textField3.getText());
                 d.append("pesel", textField5.getText());
                 deceased.insertOne(d);
+                JOptionPane.showMessageDialog(null, "Dodano zmarłego.");
+
             }
         });
 

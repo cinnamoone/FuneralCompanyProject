@@ -68,6 +68,7 @@ public class transportDetails extends JFrame{
 
 
                 transport.insertOne(d);
+                JOptionPane.showMessageDialog(null, "Dodano transport.");
             }
         });
         zobaczKarawanyButton.addActionListener(new ActionListener() {

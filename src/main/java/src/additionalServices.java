@@ -78,6 +78,7 @@ public class additionalServices extends JFrame {
                 d.append("employees", employees);
 
                 additional.insertOne(d);
+                JOptionPane.showMessageDialog(null, "Dodano usługę.");
             }
         });
 

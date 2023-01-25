@@ -62,6 +62,7 @@ public class funeralList extends JFrame {
                 gravyard.append("graveyardName", addGraveyardName.getText());
                 d.append("graveyard", gravyard);
                 funeralList.insertOne(d);
+                JOptionPane.showMessageDialog(null, "Dodano zmarłego.");
             }
         });
     }
