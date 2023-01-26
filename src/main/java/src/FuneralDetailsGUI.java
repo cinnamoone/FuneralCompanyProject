@@ -31,13 +31,8 @@ public class FuneralDetailsGUI extends JFrame {
     private JComboBox service6;
     private JComboBox service7;
     private JLabel serviceList;
-    private JTextField funeralID;
-    private JTextField funeralDate;
     private JLabel transportID;
-    private JTextField deceasedID;
     private JLabel deceasedInfo;
-    private JTextField nameAndSurname;
-    private JTextField pesel;
     private JTextField dodajNazweCmentarza;
     private JTextField dodajNazweMiasta;
     private JTextField dodajAlejke;
@@ -69,6 +64,7 @@ public class FuneralDetailsGUI extends JFrame {
     MongoClient mongoClient = MongoClients.create(uri);
     MongoDatabase database = mongoClient.getDatabase("FuneralCompany");
     MongoCollection funeralDetails = database.getCollection("funeralDetails");
+    MongoCollection<Document> additional = database.getCollection("additionalServices");
             public FuneralDetailsGUI()  throws HeadlessException {
                 this.setContentPane(panel1);
                 this.pack();
@@ -76,73 +72,333 @@ public class FuneralDetailsGUI extends JFrame {
                 zapiszDoListy.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                Document fd =new Document("_id",pogrzebID.getText());
-                fd.append("funeralDate", pogrzebData.getText());
-                fd.append("deceasedID", dodajIDzmarlego.getText());
-                fd.append("nameAndSurname", dodajImieNazwisko.getText());
-                fd.append("pesel", dodajPesel.getText());
-                List<Object> aservices = new ArrayList<>();
 
-                if(service1.getSelectedItem() != "-"){
-                    aservices.add(service1.getSelectedItem());
-                }
-                if(service2.getSelectedItem() != "-"){
-                    aservices.add(service2.getSelectedItem());
-                }
-                if(service3.getSelectedItem() != "-"){
-                    aservices.add(service3.getSelectedItem());
-                }
-                if(service4.getSelectedItem() != "-"){
-                    aservices.add(service4.getSelectedItem());
-                }
-                if(service5.getSelectedItem() != "-"){
-                    aservices.add(service5.getSelectedItem());
-                }
-                if(service6.getSelectedItem() != "-"){
-                    aservices.add(service6.getSelectedItem());
-                }
+                            List<Document> addi = additional.find().into(new ArrayList<>());
 
-                        if(pracownicy1.getSelectedItem() != "-"){
-                            aservices.add(pracownicy1.getSelectedItem());
+                            Document fd =new Document("_id",pogrzebID.getText());
+                            fd.append("funeralDate", pogrzebData.getText());
+                            Document deceasedInfo = new Document();
+                            deceasedInfo.append("deceasedID", dodajIDzmarlego.getText());
+                            deceasedInfo.append("nameAndSurname", dodajImieNazwisko.getText());
+                            deceasedInfo.append("pesel", dodajPesel.getText());
+                            fd.append("deceasedInfo", deceasedInfo);
+
+                            Document aservices1 = new Document();
+
+                            List<Object> aservices2 = new ArrayList<>();
+                            Document pallbearers = new Document();
+
+                            Document object1 = new Document();
+                            Document object2 = new Document();
+                            Document object3 = new Document();
+                            Document object4 = new Document();
+                            Document object5 = new Document();
+                            Document object6 = new Document();
+                            Document object7 = new Document();
+
+                            if(service1.getSelectedItem() != "-" &&
+                                    service1.getSelectedItem() != "pallbearers1" &&
+                                    service1.getSelectedItem() != "pallbearers2" &&
+                                    service1.getSelectedItem() != "pallbearers3" &&
+                                    service1.getSelectedItem() != "pallbearers4" &&
+                                    service1.getSelectedItem() != "pallbearers5" &&
+                                    service1.getSelectedItem() != "pallbearers6"){
+                                object1.append("_id", service1.getSelectedItem());
+
+                                for(int empl = 0; empl< addi.size(); empl++){
+                                    if(addi.get(empl).getString("_id").equals(service1.getSelectedItem())){
+                                        object1.append("serviceName", addi.get(empl).getString("serviceName"));
+                                        object1.append("price", addi.get(empl).getString("price"));
+
+                                    }
+                                }
+
+                                aservices2.add(object1);
+                                aservices1.append("aservices", aservices2);
+                                fd.append("aservices", aservices1);
+
+                            }
+
+                            if(service2.getSelectedItem() != "-" &&
+                                    service2.getSelectedItem() != "pallbearers1" &&
+                                    service2.getSelectedItem() != "pallbearers2" &&
+                                    service2.getSelectedItem() != "pallbearers3" &&
+                                    service2.getSelectedItem() != "pallbearers4" &&
+                                    service2.getSelectedItem() != "pallbearers5" &&
+                                    service2.getSelectedItem() != "pallbearers6"){
+                                object2.append("_id", service2.getSelectedItem());
+
+                                for(int empl = 0; empl< addi.size(); empl++){
+                                    if(addi.get(empl).getString("_id").equals(service2.getSelectedItem())){
+                                        object2.append("serviceName", addi.get(empl).getString("serviceName"));
+                                        object2.append("price", addi.get(empl).getString("price"));
+
+                                    }
+                                }
+
+                                aservices2.add(object2);
+                                aservices1.append("aservices", aservices2);
+                                fd.append("aservices", aservices1);
+
+                            }
+
+                            if(service3.getSelectedItem() != "-" &&
+                                    service3.getSelectedItem() != "pallbearers1" &&
+                                    service3.getSelectedItem() != "pallbearers2" &&
+                                    service3.getSelectedItem() != "pallbearers3" &&
+                                    service3.getSelectedItem() != "pallbearers4" &&
+                                    service3.getSelectedItem() != "pallbearers5" &&
+                                    service3.getSelectedItem() != "pallbearers6"){
+                                object3.append("_id", service3.getSelectedItem());
+
+                                for(int empl = 0; empl< addi.size(); empl++){
+                                    if(addi.get(empl).getString("_id").equals(service3.getSelectedItem())){
+                                        object3.append("serviceName", addi.get(empl).getString("serviceName"));
+                                        object3.append("price", addi.get(empl).getString("price"));
+
+                                    }
+                                }
+
+                                aservices2.add(object3);
+                                aservices1.append("aservices", aservices2);
+                                fd.append("aservices", aservices1);
+
+                            }
+
+                            if(service4.getSelectedItem() != "-" &&
+                                    service4.getSelectedItem() != "pallbearers1" &&
+                                    service4.getSelectedItem() != "pallbearers2" &&
+                                    service4.getSelectedItem() != "pallbearers3" &&
+                                    service4.getSelectedItem() != "pallbearers4" &&
+                                    service4.getSelectedItem() != "pallbearers5" &&
+                                    service4.getSelectedItem() != "pallbearers6"){
+                                object4.append("_id", service4.getSelectedItem());
+
+                                for(int empl = 0; empl< addi.size(); empl++){
+                                    if(addi.get(empl).getString("_id").equals(service4.getSelectedItem())){
+                                        object4.append("serviceName", addi.get(empl).getString("serviceName"));
+                                        object4.append("price", addi.get(empl).getString("price"));
+
+                                    }
+                                }
+
+                                aservices2.add(object4);
+                                aservices1.append("aservices", aservices2);
+                                fd.append("aservices", aservices1);
+
+                            }
+
+                            if(service5.getSelectedItem() != "-" &&
+                                    service5.getSelectedItem() != "pallbearers1" &&
+                                    service5.getSelectedItem() != "pallbearers2" &&
+                                    service5.getSelectedItem() != "pallbearers3" &&
+                                    service5.getSelectedItem() != "pallbearers4" &&
+                                    service5.getSelectedItem() != "pallbearers5" &&
+                                    service5.getSelectedItem() != "pallbearers6"){
+                                object5.append("_id", service5.getSelectedItem());
+
+                                for(int empl = 0; empl< addi.size(); empl++){
+                                    if(addi.get(empl).getString("_id").equals(service5.getSelectedItem())){
+                                        object5.append("serviceName", addi.get(empl).getString("serviceName"));
+                                        object5.append("price", addi.get(empl).getString("price"));
+
+                                    }
+                                }
+
+                                aservices2.add(object5);
+                                aservices1.append("aservices", aservices2);
+                                fd.append("aservices", aservices1);
+
+                            }
+
+                            if(service6.getSelectedItem() != "-" &&
+                                    service6.getSelectedItem() != "pallbearers1" &&
+                                    service6.getSelectedItem() != "pallbearers2" &&
+                                    service6.getSelectedItem() != "pallbearers3" &&
+                                    service6.getSelectedItem() != "pallbearers4" &&
+                                    service6.getSelectedItem() != "pallbearers5" &&
+                                    service6.getSelectedItem() != "pallbearers6"){
+                                object6.append("_id", service6.getSelectedItem());
+
+                                for(int empl = 0; empl< addi.size(); empl++){
+                                    if(addi.get(empl).getString("_id").equals(service6.getSelectedItem())){
+                                        object6.append("serviceName", addi.get(empl).getString("serviceName"));
+                                        object6.append("price", addi.get(empl).getString("price"));
+
+                                    }
+                                }
+
+                                aservices2.add(object6);
+                                aservices1.append("aservices", aservices2);
+                                fd.append("aservices", aservices1);
+
+                            }
+
+                            if(service7.getSelectedItem() != "-" &&
+                                    service7.getSelectedItem() != "pallbearers1" &&
+                                    service7.getSelectedItem() != "pallbearers2" &&
+                                    service7.getSelectedItem() != "pallbearers3" &&
+                                    service7.getSelectedItem() != "pallbearers4" &&
+                                    service7.getSelectedItem() != "pallbearers5" &&
+                                    service7.getSelectedItem() != "pallbearers6"){
+                                object7.append("_id", service7.getSelectedItem());
+
+                                for(int empl = 0; empl< addi.size(); empl++){
+                                    if(addi.get(empl).getString("_id").equals(service7.getSelectedItem())){
+                                        object7.append("serviceName", addi.get(empl).getString("serviceName"));
+                                        object7.append("price", addi.get(empl).getString("price"));
+
+                                    }
+                                }
+
+                                aservices2.add(object7);
+                                aservices1.append("aservices", aservices2);
+                                fd.append("aservices", aservices1);
+
+                            }
+
+                            if(service1.getSelectedItem().equals("pallbearers1") ||
+                                    service2.getSelectedItem().equals("pallbearers1") ||
+                                    service3.getSelectedItem().equals("pallbearers1") ||
+                                    service4.getSelectedItem().equals("pallbearers1") ||
+                                    service5.getSelectedItem().equals("pallbearers1") ||
+                                    service6.getSelectedItem().equals("pallbearers1") ||
+                                    service7.getSelectedItem().equals("pallbearers1")){
+
+                                pallbearers.append("_id", "pallbearers1");
+                                pallbearers.append("serviceName", "trunnonosze");
+                                pallbearers.append("price", "100");
+                                List<Object> employ = new ArrayList<>();
+                                employ.add(pracownicy1.getSelectedItem());
+                                pallbearers.append("employees", employ);
+                                aservices1.append("pallbearers", pallbearers);
+                                fd.append("aservices", aservices1);
+                            }
+                            if(service1.getSelectedItem().equals("pallbearers2") ||
+                                    service2.getSelectedItem().equals("pallbearers2") ||
+                                    service3.getSelectedItem().equals("pallbearers2") ||
+                                    service4.getSelectedItem().equals("pallbearers2") ||
+                                    service5.getSelectedItem().equals("pallbearers2") ||
+                                    service6.getSelectedItem().equals("pallbearers2") ||
+                                    service7.getSelectedItem().equals("pallbearers2")){
+
+                                pallbearers.append("_id", "pallbearers2");
+                                pallbearers.append("serviceName", "trunnonosze");
+                                pallbearers.append("price", "200");
+                                List<Object> employ = new ArrayList<>();
+                                employ.add(pracownicy1.getSelectedItem());
+                                employ.add(pracownicy2.getSelectedItem());
+                                pallbearers.append("employees", employ);
+                                aservices1.append("pallbearers", pallbearers);
+                                fd.append("aservices", aservices1);
+                            }
+                            if(service1.getSelectedItem().equals("pallbearers3") ||
+                                    service2.getSelectedItem().equals("pallbearers3") ||
+                                    service3.getSelectedItem().equals("pallbearers3") ||
+                                    service4.getSelectedItem().equals("pallbearers3") ||
+                                    service5.getSelectedItem().equals("pallbearers3") ||
+                                    service6.getSelectedItem().equals("pallbearers3") ||
+                                    service7.getSelectedItem().equals("pallbearers3")){
+
+                                pallbearers.append("_id", "pallbearers3");
+                                pallbearers.append("serviceName", "trunnonosze");
+                                pallbearers.append("price", "300");
+                                List<Object> employ = new ArrayList<>();
+                                employ.add(pracownicy1.getSelectedItem());
+                                employ.add(pracownicy2.getSelectedItem());
+                                employ.add(pracownicy3.getSelectedItem());
+                                pallbearers.append("employees", employ);
+                                aservices1.append("pallbearers", pallbearers);
+                                fd.append("aservices", aservices1);
+                            }
+
+                            if(service1.getSelectedItem().equals("pallbearers4") ||
+                                    service2.getSelectedItem().equals("pallbearers4") ||
+                                    service3.getSelectedItem().equals("pallbearers4") ||
+                                    service4.getSelectedItem().equals("pallbearers4") ||
+                                    service5.getSelectedItem().equals("pallbearers4") ||
+                                    service6.getSelectedItem().equals("pallbearers4") ||
+                                    service7.getSelectedItem().equals("pallbearers4")){
+
+                                pallbearers.append("_id", "pallbearers4");
+                                pallbearers.append("serviceName", "trunnonosze");
+                                pallbearers.append("price", "400");
+                                List<Object> employ = new ArrayList<>();
+                                employ.add(pracownicy1.getSelectedItem());
+                                employ.add(pracownicy2.getSelectedItem());
+                                employ.add(pracownicy3.getSelectedItem());
+                                employ.add(pracownicy4.getSelectedItem());
+                                pallbearers.append("employees", employ);
+                                aservices1.append("pallbearers", pallbearers);
+                                fd.append("aservices", aservices1);
+                            }
+
+                            if(service1.getSelectedItem().equals("pallbearers5") ||
+                                    service2.getSelectedItem().equals("pallbearers5") ||
+                                    service3.getSelectedItem().equals("pallbearers5") ||
+                                    service4.getSelectedItem().equals("pallbearers5") ||
+                                    service5.getSelectedItem().equals("pallbearers5") ||
+                                    service6.getSelectedItem().equals("pallbearers5") ||
+                                    service7.getSelectedItem().equals("pallbearers5")){
+
+                                pallbearers.append("_id", "pallbearers5");
+                                pallbearers.append("serviceName", "trunnonosze");
+                                pallbearers.append("price", "500");
+                                List<Object> employ = new ArrayList<>();
+                                employ.add(pracownicy1.getSelectedItem());
+                                employ.add(pracownicy2.getSelectedItem());
+                                employ.add(pracownicy3.getSelectedItem());
+                                employ.add(pracownicy4.getSelectedItem());
+                                employ.add(pracownicy5.getSelectedItem());
+                                pallbearers.append("employees", employ);
+                                aservices1.append("pallbearers", pallbearers);
+                                fd.append("aservices", aservices1);
+                            }
+
+                            if(service1.getSelectedItem().equals("pallbearers6") ||
+                                    service2.getSelectedItem().equals("pallbearers6") ||
+                                    service3.getSelectedItem().equals("pallbearers6") ||
+                                    service4.getSelectedItem().equals("pallbearers6") ||
+                                    service5.getSelectedItem().equals("pallbearers6") ||
+                                    service6.getSelectedItem().equals("pallbearers6") ||
+                                    service7.getSelectedItem().equals("pallbearers6")){
+
+                                pallbearers.append("_id", "pallbearers6");
+                                pallbearers.append("serviceName", "trunnonosze");
+                                pallbearers.append("price", "600");
+                                List<Object> employ = new ArrayList<>();
+                                employ.add(pracownicy1.getSelectedItem());
+                                employ.add(pracownicy2.getSelectedItem());
+                                employ.add(pracownicy3.getSelectedItem());
+                                employ.add(pracownicy4.getSelectedItem());
+                                employ.add(pracownicy5.getSelectedItem());
+                                employ.add(pracownicy6.getSelectedItem());
+                                pallbearers.append("employees", employ);
+                                aservices1.append("pallbearers", pallbearers);
+                                fd.append("aservices", aservices1);
+                            }
+
+
+                            fd.append("transportID", IDtransportu.getText());
+                            fd.append("aservices", aservices1);
+                            Document PlaceOfBurial = new Document();
+                            PlaceOfBurial.append("graveyardName", dodajNazweCmentarza.getText());
+                            PlaceOfBurial.append("town",dodajNazweMiasta.getText());
+                            PlaceOfBurial.append("alley", dodajAlejke.getText());
+                            PlaceOfBurial.append("sector", dodajSektor.getText());
+                            PlaceOfBurial.append("nr", dodajNumerMiejsca.getText());
+                            PlaceOfBurial.append("communal", czyKomunalny.getSelectedItem());
+                            fd.append("placeOfBurial", PlaceOfBurial);
+
+                            Document price = new Document();
+                            price.append("startPrice", "2000");
+                            price.append("aservPrice", dodatkowaCena.getText());
+                            price.append("summPrice",cenaKoncowa.getText());
+                            fd.append("price", price);
+
+                            funeralDetails.insertOne(fd);
+                            JOptionPane.showMessageDialog(null, "Dodano szczegóły pogrzebu do listy.");
                         }
-                        if(pracownicy2.getSelectedItem() != "-"){
-                            aservices.add(pracownicy2.getSelectedItem());
-                        }
-                        if(pracownicy3.getSelectedItem() != "-"){
-                            aservices.add(pracownicy3.getSelectedItem());
-                        }
-                        if(pracownicy4.getSelectedItem() != "-"){
-                            aservices.add(pracownicy4.getSelectedItem());
-                        }
-                        if(pracownicy5.getSelectedItem() != "-"){
-                            aservices.add(pracownicy5.getSelectedItem());
-                        }
-                        if(pracownicy6.getSelectedItem() != "-"){
-                            aservices.add(pracownicy6.getSelectedItem());
-                        }
-
-
-                        if(organista.getSelectedItem() != "-"){
-                            aservices.add(organista.getSelectedItem());
-                        }
-
-
-                fd.append("aservices", aservices);
-
-
-                fd.append("transportID", IDtransportu.getText());
-                List<Object> PlaceOfBurial = new ArrayList<>();
-                fd.append("graveyardName", dodajNazweCmentarza.getText());
-                fd.append("town",dodajNazweMiasta.getText());
-                fd.append("alley", dodajAlejke.getText());
-                fd.append("sector", dodajSektor.getText());
-                fd.append("nr", dodajNumerMiejsca.getText());
-                fd.append("communal", czyKomunalny.getSelectedItem());
-                fd.append("aservPrice", dodatkowaCena.getText());
-                fd.append("summPrice",cenaKoncowa.getText());
-                funeralDetails.insertOne(fd);
-                JOptionPane.showMessageDialog(null, "Dodano szczegóły pogrzebu do listy.");
-            }
             });
         }
 }

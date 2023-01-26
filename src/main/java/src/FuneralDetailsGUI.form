@@ -37,22 +37,6 @@
             </constraints>
             <properties/>
           </component>
-          <component id="a2b86" class="javax.swing.JTextField" binding="funeralID">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="ID pogrzebu"/>
-            </properties>
-          </component>
-          <component id="e0170" class="javax.swing.JTextField" binding="funeralDate">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Data pogrzebu"/>
-            </properties>
-          </component>
           <grid id="57abe" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
@@ -77,14 +61,6 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="d138f" class="javax.swing.JTextField" binding="pesel">
-                <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Pesel"/>
-                </properties>
-              </component>
               <component id="1cea2" class="javax.swing.JTextField" binding="dodajPesel">
                 <constraints>
                   <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -101,7 +77,7 @@
                   <text value="Dane zmarłego"/>
                 </properties>
               </component>
-              <component id="211a7" class="javax.swing.JTextField" binding="deceasedID">
+              <component id="c4b6" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -109,12 +85,20 @@
                   <text value="ID zmarłego"/>
                 </properties>
               </component>
-              <component id="6ede2" class="javax.swing.JTextField" binding="nameAndSurname">
+              <component id="4574c" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Imię i nazwisko"/>
+                </properties>
+              </component>
+              <component id="e0e87" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Pesel"/>
                 </properties>
               </component>
             </children>
@@ -150,18 +134,18 @@
                 <properties>
                   <model>
                     <item value="-"/>
-                    <item value="trumna (200zł)"/>
-                    <item value="urna (500 zł)"/>
-                    <item value="wieniec (150 zł)"/>
-                    <item value="organista (300 zł)"/>
-                    <item value="transport (250 zł)"/>
-                    <item value="dekoracje (300 zł)"/>
-                    <item value="trunnonosze1 (100 zł)"/>
-                    <item value="trunnonosze2 (200 zł)"/>
-                    <item value="trunnonosze3 (300 zł)"/>
-                    <item value="trunnonosze4 (350 zł)"/>
-                    <item value="trunnonosze5 (400 zł)"/>
-                    <item value="trunnonosze6 (450 zł)"/>
+                    <item value="coffinService"/>
+                    <item value="decorationService"/>
+                    <item value="pallbearers3"/>
+                    <item value="transportService"/>
+                    <item value="urnService"/>
+                    <item value="pallbearers1"/>
+                    <item value="pallbearers2"/>
+                    <item value="pallbearers4"/>
+                    <item value="pallbearers5"/>
+                    <item value="pallbearers6"/>
+                    <item value="wreathService"/>
+                    <item value="organistService"/>
                   </model>
                 </properties>
               </component>
@@ -172,18 +156,18 @@
                 <properties>
                   <model>
                     <item value="-"/>
-                    <item value="trumna (200zł)"/>
-                    <item value="urna (500 zł)"/>
-                    <item value="wieniec (150 zł)"/>
-                    <item value="organista (300 zł)"/>
-                    <item value="transport (250 zł)"/>
-                    <item value="dekoracje (300 zł)"/>
-                    <item value="trunnonosze1 (100 zł)"/>
-                    <item value="trunnonosze2 (200 zł)"/>
-                    <item value="trunnonosze3 (300 zł)"/>
-                    <item value="trunnonosze4 (350 zł)"/>
-                    <item value="trunnonosze5 (400 zł)"/>
-                    <item value="trunnonosze6 (450 zł)"/>
+                    <item value="coffinService"/>
+                    <item value="decorationService"/>
+                    <item value="pallbearers3"/>
+                    <item value="transportService"/>
+                    <item value="urnService"/>
+                    <item value="pallbearers1"/>
+                    <item value="pallbearers2"/>
+                    <item value="pallbearers4"/>
+                    <item value="pallbearers5"/>
+                    <item value="pallbearers6"/>
+                    <item value="wreathService"/>
+                    <item value="organistService"/>
                   </model>
                 </properties>
               </component>
@@ -194,18 +178,18 @@
                 <properties>
                   <model>
                     <item value="-"/>
-                    <item value="trumna (200zł)"/>
-                    <item value="urna (500 zł)"/>
-                    <item value="wieniec (150 zł)"/>
-                    <item value="organista (300 zł)"/>
-                    <item value="transport (250 zł)"/>
-                    <item value="dekoracje (300 zł)"/>
-                    <item value="trunnonosze1 (100 zł)"/>
-                    <item value="trunnonosze2 (200 zł)"/>
-                    <item value="trunnonosze3 (300 zł)"/>
-                    <item value="trunnonosze4 (350 zł)"/>
-                    <item value="trunnonosze5 (400 zł)"/>
-                    <item value="trunnonosze6 (450 zł)"/>
+                    <item value="coffinService"/>
+                    <item value="decorationService"/>
+                    <item value="pallbearers3"/>
+                    <item value="transportService"/>
+                    <item value="urnService"/>
+                    <item value="pallbearers1"/>
+                    <item value="pallbearers2"/>
+                    <item value="pallbearers4"/>
+                    <item value="pallbearers5"/>
+                    <item value="pallbearers6"/>
+                    <item value="wreathService"/>
+                    <item value="organistService"/>
                   </model>
                 </properties>
               </component>
@@ -216,18 +200,18 @@
                 <properties>
                   <model>
                     <item value="-"/>
-                    <item value="trumna (200zł)"/>
-                    <item value="urna (500 zł)"/>
-                    <item value="wieniec (150 zł)"/>
-                    <item value="organista (300 zł)"/>
-                    <item value="transport (250 zł)"/>
-                    <item value="dekoracje (300 zł)"/>
-                    <item value="trunnonosze1 (100 zł)"/>
-                    <item value="trunnonosze2 (200 zł)"/>
-                    <item value="trunnonosze3 (300 zł)"/>
-                    <item value="trunnonosze4 (350 zł)"/>
-                    <item value="trunnonosze5 (400 zł)"/>
-                    <item value="trunnonosze6 (450 zł)"/>
+                    <item value="coffinService"/>
+                    <item value="decorationService"/>
+                    <item value="pallbearers3"/>
+                    <item value="transportService"/>
+                    <item value="urnService"/>
+                    <item value="pallbearers1"/>
+                    <item value="pallbearers2"/>
+                    <item value="pallbearers4"/>
+                    <item value="pallbearers5"/>
+                    <item value="pallbearers6"/>
+                    <item value="wreathService"/>
+                    <item value="organistService"/>
                   </model>
                 </properties>
               </component>
@@ -238,18 +222,18 @@
                 <properties>
                   <model>
                     <item value="-"/>
-                    <item value="trumna (200zł)"/>
-                    <item value="urna (500 zł)"/>
-                    <item value="wieniec (150 zł)"/>
-                    <item value="organista (300 zł)"/>
-                    <item value="transport (250 zł)"/>
-                    <item value="dekoracje (300 zł)"/>
-                    <item value="trunnonosze1 (100 zł)"/>
-                    <item value="trunnonosze2 (200 zł)"/>
-                    <item value="trunnonosze3 (300 zł)"/>
-                    <item value="trunnonosze4 (350 zł)"/>
-                    <item value="trunnonosze5 (400 zł)"/>
-                    <item value="trunnonosze6 (450 zł)"/>
+                    <item value="coffinService"/>
+                    <item value="decorationService"/>
+                    <item value="pallbearers3"/>
+                    <item value="transportService"/>
+                    <item value="urnService"/>
+                    <item value="pallbearers1"/>
+                    <item value="pallbearers2"/>
+                    <item value="pallbearers4"/>
+                    <item value="pallbearers5"/>
+                    <item value="pallbearers6"/>
+                    <item value="wreathService"/>
+                    <item value="organistService"/>
                   </model>
                 </properties>
               </component>
@@ -260,18 +244,18 @@
                 <properties>
                   <model>
                     <item value="-"/>
-                    <item value="trumna (200zł)"/>
-                    <item value="urna (500 zł)"/>
-                    <item value="wieniec (150 zł)"/>
-                    <item value="organista (300 zł)"/>
-                    <item value="transport (250 zł)"/>
-                    <item value="dekoracje (300 zł)"/>
-                    <item value="trunnonosze1 (100 zł)"/>
-                    <item value="trunnonosze2 (200 zł)"/>
-                    <item value="trunnonosze3 (300 zł)"/>
-                    <item value="trunnonosze4 (350 zł)"/>
-                    <item value="trunnonosze5 (400 zł)"/>
-                    <item value="trunnonosze6 (450 zł)"/>
+                    <item value="coffinService"/>
+                    <item value="decorationService"/>
+                    <item value="pallbearers3"/>
+                    <item value="transportService"/>
+                    <item value="urnService"/>
+                    <item value="pallbearers1"/>
+                    <item value="pallbearers2"/>
+                    <item value="pallbearers4"/>
+                    <item value="pallbearers5"/>
+                    <item value="pallbearers6"/>
+                    <item value="wreathService"/>
+                    <item value="organistService"/>
                   </model>
                 </properties>
               </component>
@@ -282,18 +266,18 @@
                 <properties>
                   <model>
                     <item value="-"/>
-                    <item value="trumna (200zł)"/>
-                    <item value="urna (500 zł)"/>
-                    <item value="wieniec (150 zł)"/>
-                    <item value="organista (300 zł)"/>
-                    <item value="transport (250 zł)"/>
-                    <item value="dekoracje (300 zł)"/>
-                    <item value="trunnonosze1 (100 zł)"/>
-                    <item value="trunnonosze2 (200 zł)"/>
-                    <item value="trunnonosze3 (300 zł)"/>
-                    <item value="trunnonosze4 (350 zł)"/>
-                    <item value="trunnonosze5 (400 zł)"/>
-                    <item value="trunnonosze6 (450 zł)"/>
+                    <item value="coffinService"/>
+                    <item value="decorationService"/>
+                    <item value="pallbearers3"/>
+                    <item value="transportService"/>
+                    <item value="urnService"/>
+                    <item value="pallbearers1"/>
+                    <item value="pallbearers2"/>
+                    <item value="pallbearers4"/>
+                    <item value="pallbearers5"/>
+                    <item value="pallbearers6"/>
+                    <item value="wreathService"/>
+                    <item value="organistService"/>
                   </model>
                 </properties>
               </component>
@@ -329,6 +313,22 @@
               <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
+          <component id="eb9ef" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Data pogrzebu"/>
+            </properties>
+          </component>
+          <component id="ed855" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="ID pogrzebu"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <grid id="eb6c5" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
