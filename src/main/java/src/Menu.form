@@ -136,6 +136,16 @@
           <text value="Dodaj szczegóły pogrzebu"/>
         </properties>
       </component>
+      <component id="ac4c" class="javax.swing.JButton" binding="zobaczSzczegółyPogrzebuButton" default-binding="true">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="14" style="1"/>
+          <foreground color="-11661230"/>
+          <text value="Zobacz szczegóły pogrzebu"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

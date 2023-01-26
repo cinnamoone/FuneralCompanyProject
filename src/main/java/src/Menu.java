@@ -17,6 +17,7 @@ public class Menu extends JFrame {
     private JButton zobaczUsługiDodatkoweButton;
     private JButton dodajTransportButton;
     private JButton dodajSzczegoly;
+    private JButton zobaczSzczegółyPogrzebuButton;
 
     public Menu() {
 
@@ -115,6 +116,14 @@ public class Menu extends JFrame {
                         () -> new FuneralDetailsGUI().setVisible(true)
                 );
 
+            }
+        });
+        zobaczSzczegółyPogrzebuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SwingUtilities.invokeLater(
+                        () -> new seeFuneralDetails().setVisible(true)
+                );
             }
         });
     }
