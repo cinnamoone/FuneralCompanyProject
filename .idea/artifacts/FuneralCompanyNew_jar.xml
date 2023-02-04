@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FuneralCompanyNew:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FuneralCompanyNew_jar</output-path>
+    <root id="archive" name="FuneralCompanyNew.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="FuneralCompanyNew" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-sync/4.3.4/mongodb-driver-sync-4.3.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mongodb/bson/4.3.4/bson-4.3.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/4.3.4/mongodb-driver-core-4.3.4.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
